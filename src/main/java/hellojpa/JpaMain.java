@@ -16,15 +16,15 @@ public class JpaMain {
         tr.begin();
 
         //code
-        Member member = new Member();
-        member.setId(1L);
-        member.setName("name");
-        em.persist(member);
 
-        tr.commit();
+        try {
 
-
+            tr.commit();
+        } catch (Exception e) {
+            tr.rollback();
+        } finally {
         em.close();
+        }
         emf.close();
     }
 }
