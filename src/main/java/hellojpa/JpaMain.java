@@ -11,6 +11,6 @@ public class JpaMain {
        EntityManagerFactory emf = Persistence.createEntityManagerFactory("hello");
 
        System.out.println("123");
-
+        System.out.println("test");
     }
 }
