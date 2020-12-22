@@ -9,12 +9,18 @@
     <version>1.0.0</version>
 
     <dependencies>
+
+        <!-- MySQL -->
+        <dependency>
+            <groupId>mysql</groupId>
+            <artifactId>mysql-connector-java</artifactId>
+            <version>5.1.47</version>
+        </dependency>
 <!--  H2Database      -->
         <dependency>
             <groupId>com.h2database</groupId>
             <artifactId>h2</artifactId>
             <version>1.4.199</version>
-            <scope>test</scope>
         </dependency>
 
 <!--    JPA     -->
