@@ -1,12 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <persistence xmlns="http://xmlns.jcp.org/xml/ns/persistence"
-             version="2.1">
-    <persistence-unit name="simple-jpa-application">
+             version="2.2">
+<!--    JPA 쓸건데 무슨 이름 쓸거-->
+    <persistence-unit name="hello">
         <properties>
-<!--    필수 속성        -->
+<!--    필수 속성    Database 접근정보를 설정해줘야됨 난 h2데이터베이스 쓸거야    -->
             <property name="javax.persistence.jdbc.driver" value="org.h2.Driver"/>
             <property name="javax.persistence.jdbc.user" value="sa"/>
             <property name="javax.persistence.jdbc.password" value=""/>
+            <property name="javax.persistence.jdbc.url" value="jdbc:h2:tcp://localhost/~/test"/>
+            <!-- Database 방언, JPA는 데이터베이스에 종속적이기 않게 설계되있음 ex)mysql -> oracle로 바뀌어도 쓰여야됨 , 가변문자같은게 다름 VARCHAR 혹은 페이징 LIMIT, ROWNUM
+               방언 : SQL표준을 지키지 않는 특정 데이터베이스만의 고유한 기능
+               -->
             <property name="hibernate.dialect" value="org.hibernate.dialect.H2Dialect"/>
 
 <!--    옵션            -->
