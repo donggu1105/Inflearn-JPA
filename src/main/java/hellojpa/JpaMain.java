@@ -16,16 +16,20 @@ public class JpaMain {
         EntityTransaction tr = em.getTransaction();
         tr.begin();
 
-        Member member = new Member();
+        try {
 
-        member.setId(1L);
-        member.setName("name");
+            Member member = em.find(Member.class, 1L);
+            member.setName("test");
 
-        em.persist(member);
+            System.out.println("Member Name :"+ member.getName());
 
         tr.commit();
 
-        em.close();
+        } catch (Exception e) {
+            tr.rollback();
+        } finally {
+            em.close();
+        }
         emf.close();
     }
 }

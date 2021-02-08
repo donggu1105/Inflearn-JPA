@@ -2,14 +2,14 @@ package hellojpa;
 
 import javax.persistence.*;
 
-@Table(name = "USER")
+
 @Entity
 public class Member {
 
     @Id
     private Long id;
 
-    @Column(name = "user_name")
+    @Column
     private String name;
 
     public String getName() {
