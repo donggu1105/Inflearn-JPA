@@ -9,8 +9,10 @@ public class Member {
     @Id
     private Long id;
 
-    @Column
+    @Column(unique = true, nullable = false)
     private String name;
+
+    private int aj;
 
     public Member() {
 
