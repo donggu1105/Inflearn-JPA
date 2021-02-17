@@ -19,11 +19,7 @@ public class JpaMain {
 
         try {
 
-            Member member = new Member(200L,"name");
-            em.persist(member);
-            em.flush();
 
-            System.out.println("==========");
             tr.commit();
 
         } catch (Exception e) {
