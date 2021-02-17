@@ -1,6 +1,11 @@
 package hellojpa;
 
+import org.hibernate.annotations.CreationTimestamp;
+import org.hibernate.annotations.UpdateTimestamp;
+
 import javax.persistence.*;
+import java.math.BigDecimal;
+import java.time.LocalDate;
 import java.util.Date;
 
 
@@ -8,28 +13,19 @@ import java.util.Date;
 public class Member {
 
     @Id
-    private Long id;
+    @GeneratedValue(strategy = GenerationType.SEQUENCE)
+    private String id;
 
     @Column
     private String userName;
 
-    private Integer age;
+    public void setId(String id) {
+        this.id = id;
+    }
 
-    @Enumerated(EnumType.STRING)
-    private RoleType roleType;
-
-    @Temporal(TemporalType.TIMESTAMP)
-    private Date createdDate;
-
-    @Temporal(TemporalType.TIMESTAMP)
-    private Date lastModifiedDate;
-
-    @Lob
-    private String description;
-
-    @Transient
-    private int temp;
-
+    public void setUserName(String userName) {
+        this.userName = userName;
+    }
     public Member() {
 
     }

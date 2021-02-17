@@ -19,6 +19,9 @@ public class JpaMain {
 
         try {
 
+            Member member = new Member();
+
+            em.persist(member);
 
             tr.commit();
 
