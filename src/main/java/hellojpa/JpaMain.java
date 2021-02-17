@@ -19,9 +19,18 @@ public class JpaMain {
 
         try {
 
-            Member member = new Member();
+            Team team = new Team();
+            team.setName("TeamA");
+            em.persist(team);
 
+            Member member = new Member();
+            member.setTeam(team);
+            member.setUserName("강동현");
             em.persist(member);
+
+            em.flush();
+            em.clear();
+
 
             tr.commit();
 
