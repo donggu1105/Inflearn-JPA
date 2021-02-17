@@ -28,9 +28,15 @@ public class JpaMain {
             member.setUserName("강동현");
             em.persist(member);
 
-            em.flush();
-            em.clear();
+            Team findTeam = em.find(Team.class, team.getId());
 
+            List<Member> members = findTeam.getMembers();
+
+            System.out.println("=======");
+            for(Member m : members) {
+                System.out.println("m : "+m.getUserName());
+            }
+            System.out.println("=======");
 
             tr.commit();
 
